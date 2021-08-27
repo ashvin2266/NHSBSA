@@ -1,0 +1,1179 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Extent Report</title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@c43b89d03a7c43dae8bb8f0f078bad1997af6b3b/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa bdd-report dark">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">NHSBSA</span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Aug 27, 2021 02:44:31</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('category-view')">
+<a id="nav-category" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-tag"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>Aug 27, 2021 02:44:31</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>Aug 27, 2021 02:45:14</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Features Passed</p>
+<h3>1</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Features Failed</p>
+<h3>0</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Features</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='100%'>
+<b>1</b> features passed
+</small>
+</div>
+<div>
+<small data-tooltip='0%'><b>0</b> features failed,
+<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Scenarios</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='child-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='100%'><b>8</b> scenarios passed</small></div>
+<div>
+<small data-tooltip='0%'><b>0</b> scenarios failed,
+<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Steps</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='grandchild-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='100%'><b>90</b> steps passed</small></div>
+<div>
+<small data-tooltip='0%'><b>0</b> steps failed,
+<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"As a person from Wales":42.473
+};
+</script>
+<div class="row">
+<div class="col-md-4 category-container">
+<div class="card">
+<div class="card-header"><p>Tags</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
+<tr>
+<td>@under19</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@over60</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@age19-24</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@age25-60</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@nhs</td>
+<td>9</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="col-md-4 sysenv-container">
+<div class="card">
+<div class="card-header"><p>System/Environment</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Value</th></tr></thead>
+<tbody>
+<tr>
+<td>user</td>
+<td>Ashvin</td>
+</tr>
+<tr>
+<td>build</td>
+<td>1.1</td>
+</tr>
+<tr>
+<td>os</td>
+<td>Window</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 1,
+failParent: 0,
+warningParent: 0,
+skipParent: 0,
+childCount: 5,
+passChild: 8,
+failChild: 0,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 90,
+failGrandChild: 0,
+warningGrandChild: 0,
+skipGrandChild: 0,
+infoGrandChild: 0,
+eventsCount: 5,
+};
+</script><div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
+<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" href="#">@under19</a><a class="dropdown-item" href="#">@over60</a><a class="dropdown-item" href="#">@age19-24</a><a class="dropdown-item" href="#">@age25-60</a><a class="dropdown-item" href="#">@nhs</a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="pass" test-id="1"
+          author=""
+          tag="@nhs"
+          device="">
+          <div class="test-detail">
+            <p class="name">As a person from Wales</p>
+            <p class="text-sm">
+              <span>02:44:32 am</span> / <span>00:00:42:473</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">As a person from Wales</h5>
+<span class='badge badge-success'>08.27.2021 02:44:32</span>
+<span class='badge badge-danger'>08.27.2021 02:45:14</span>
+<span class='badge badge-default'>00:00:42:473</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">@nhs</span></div>
+<div class="m-t-10 m-l-5"> I need to know what help I can get with my NHS costs
+So that I can get the treatment I need</div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>001- Verify the user benefits if they are under 19 years and full time education.</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iAmOnTheHelpPayingNhsCostsPage()">
+                <span>Given I am on the help paying nhs costs page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iAmAPersonFrom(java.lang.String)">
+                <span>And I am a person from "Wales"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iAmYearsOldAndIEnterTheDayAsAndMonthAsAndYearAs(int,java.lang.String,java.lang.String,java.lang.String)">
+                <span>Given I am 18 years old and I enter the Day as "01" and Month as "01" and Year as "2003"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iAmInFullTimeEducation()">
+                <span>And I am in full time education</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.clickOnNextButton()">
+                <span>When click on next button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iCanSeeTheNhsCostHelpResultPageTitleContains(java.lang.String)">
+                <span>Then I can see the nhs cost help result page title contains "Because you're under 19 and in full time education you get help paying NHS costs"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iVerifyMessageAsWithFullTimeEducation(java.lang.String)">
+                <span>And I verify message as "You get help with NHS costs" with full time education</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iCanSeeFollowingHelpGetFree(io.cucumber.datatable.DataTable)">
+                <span>And I can see following help get free</span>
+      <div><table class='markup-table table '><tr><td>NHS prescriptions</td></tr><tr><td>NHS dental check-ups and treatment</td></tr><tr><td>sight tests</td></tr><tr><td>NHS wigs and fabric supports</td></tr><tr><td>£4.25 each week of your pregnancy from the 10th week</td></tr><tr><td>£8.50 each week for children from birth to 1 year old</td></tr><tr><td>£4.25 each week for children between 1 and 4 years old</td></tr><tr><td>travel for NHS treatment</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="15"><span class="badge log pass-bg mr-2">Pass</span>002- Verify the user benefits if they are under 19 years and not in full time education.</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iAmOnTheHelpPayingNhsCostsPage()">
+                <span>Given I am on the help paying nhs costs page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iAmAPersonFrom(java.lang.String)">
+                <span>And I am a person from "Wales"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iAmYearsOldAndIEnterTheDayAsAndMonthAsAndYearAs(int,java.lang.String,java.lang.String,java.lang.String)">
+                <span>Given I am 18 years old and I enter the Day as "01" and Month as "01" and Year as "2003"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iAmNotInFullTimeEducation()">
+                <span>And I am not in full time education</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iDontLiveWithPartner()">
+                <span>And I dont live with partner</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iDontClaimBenefits()">
+                <span>And I dont claim benefits</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iAmNotPregnant()">
+                <span>And I am not pregnant</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iDontHaveInjuryServingArmedForces()">
+                <span>And I dont have injury serving armed forces</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iDontHaveDiabetesAndGlucoma()">
+                <span>And I dont have diabetes and glucoma</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iDontLiveInCareHome()">
+                <span>And I dont live in care home</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iHaveNoSavings()">
+                <span>And I have no savings</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.clickOnNextButton()">
+                <span>When click on next button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iCanSeeTheNhsCostHelpResultPageTitleContains(java.lang.String)">
+                <span>Then I can see the nhs cost help result page title contains "You get help with health costs"</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="33"><span class="badge log pass-bg mr-2">Pass</span>003- Verify the user benefits if they are from 19 to 24 years.</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iAmOnTheHelpPayingNhsCostsPage()">
+                <span>Given I am on the help paying nhs costs page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iAmAPersonFrom(java.lang.String)">
+                <span>And I am a person from "Wales"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iAmYearsOldAndIEnterTheDayAsAndMonthAsAndYearAs(int,java.lang.String,java.lang.String,java.lang.String)">
+                <span>Given I am 22 years old and I enter the Day as "01" and Month as "01" and Year as "1999"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iDontLiveWithPartner()">
+                <span>And I dont live with partner</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iDontClaimBenefits()">
+                <span>And I dont claim benefits</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iAmNotPregnant()">
+                <span>And I am not pregnant</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iDontHaveInjuryServingArmedForces()">
+                <span>And I dont have injury serving armed forces</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iDontHaveDiabetesAndGlucoma()">
+                <span>And I dont have diabetes and glucoma</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iDontLiveInCareHome()">
+                <span>And I dont live in care home</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iHaveNoSavings()">
+                <span>And I have no savings</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.clickOnNextButton()">
+                <span>When click on next button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iCanSeeTheNhsCostHelpResultPageTitleContains(java.lang.String)">
+                <span>Then I can see the nhs cost help result page title contains "You get help with health costs"</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="50"><span class="badge log pass-bg mr-2">Pass</span>004- Verify the user benefits if they are from 19 to 24 years and live with partner.</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iAmOnTheHelpPayingNhsCostsPage()">
+                <span>Given I am on the help paying nhs costs page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iAmAPersonFrom(java.lang.String)">
+                <span>And I am a person from "Wales"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iAmYearsOldAndIEnterTheDayAsAndMonthAsAndYearAs(int,java.lang.String,java.lang.String,java.lang.String)">
+                <span>Given I am 22 years old and I enter the Day as "01" and Month as "01" and Year as "1999"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iDoLiveWithPartner()">
+                <span>And I do live with partner</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iDontClaimBenefits()">
+                <span>And I dont claim benefits</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iAmNotPregnant()">
+                <span>And I am not pregnant</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iDoHaveInjuryServingArmedForces()">
+                <span>And I do have injury serving armed forces</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iDoHaveDiabetesAndGlucoma()">
+                <span>And I do have diabetes and glucoma</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iDontLiveInCareHome()">
+                <span>And I dont live in care home</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iHaveNoSavings()">
+                <span>And I have no savings</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.clickOnNextButton()">
+                <span>When click on next button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iCanSeeTheNhsCostHelpResultPageTitleContains(java.lang.String)">
+                <span>Then I can see the nhs cost help result page title contains "You get help with health costs"</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="67"><span class="badge log pass-bg mr-2">Pass</span>005- Verify the user benefits if they are 25 to 60 years.</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iAmOnTheHelpPayingNhsCostsPage()">
+                <span>Given I am on the help paying nhs costs page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iAmAPersonFrom(java.lang.String)">
+                <span>And I am a person from "Wales"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iAmYearsOldAndIEnterTheDayAsAndMonthAsAndYearAs(int,java.lang.String,java.lang.String,java.lang.String)">
+                <span>Given I am 35 years old and I enter the Day as "01" and Month as "01" and Year as "1986"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iDoLiveWithPartner()">
+                <span>And I do live with partner</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iDontClaimBenefits()">
+                <span>And I dont claim benefits</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iAmNotPregnant()">
+                <span>And I am not pregnant</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iDontHaveInjuryServingArmedForces()">
+                <span>And I dont have injury serving armed forces</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iDoHaveDiabetesAndGlucoma()">
+                <span>And I do have diabetes and glucoma</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iDontLiveInCareHome()">
+                <span>And I dont live in care home</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iHaveNoSavings()">
+                <span>And I have no savings</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.clickOnNextButton()">
+                <span>When click on next button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iCanSeeTheNhsCostHelpResultPageTitleContains(java.lang.String)">
+                <span>Then I can see the nhs cost help result page title contains "You get help with health costs"</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="84"><span class="badge log pass-bg mr-2">Pass</span>008- Verify the user benefits if they are 25 to 60 years and claim benefit or tax credit</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iAmOnTheHelpPayingNhsCostsPage()">
+                <span>Given I am on the help paying nhs costs page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iAmAPersonFrom(java.lang.String)">
+                <span>And I am a person from "Wales"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iAmYearsOldAndIEnterTheDayAsAndMonthAsAndYearAs(int,java.lang.String,java.lang.String,java.lang.String)">
+                <span>Given I am 41 years old and I enter the Day as "01" and Month as "01" and Year as "1980"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iDoLiveWithPartner()">
+                <span>And I do live with partner</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iClaimBenefitsOrTaxCredit()">
+                <span>And I claim benefits or tax credit</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.weReceivedUniversalCreditPayment()">
+                <span>And we received universal credit payment</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.weHaveResponsibilityWithChild()">
+                <span>And we have responsibility with child</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.weHaveACombinedTakeHomePayInLastCreditPeriod()">
+                <span>And we have a combined take home pay in last credit period</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.clickOnNextButton()">
+                <span>When click on next button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iCanSeeTheNhsCostHelpResultPageTitleContains(java.lang.String)">
+                <span>Then I can see the nhs cost help result page title contains "Because you or your partner get qualifying universal credit"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iCanSeeFollowingHelpGetFree(io.cucumber.datatable.DataTable)">
+                <span>And I can see following help get free</span>
+      <div><table class='markup-table table '><tr><td>NHS prescriptions</td></tr><tr><td>NHS dental check-ups and treatment</td></tr><tr><td>sight tests</td></tr><tr><td>NHS wigs and fabric supports</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iCanSeeFollowingHelpIGetMoneyOff(io.cucumber.datatable.DataTable)">
+                <span>And I can see following help I get Money off</span>
+      <div><table class='markup-table table '><tr><td>new glasses or contact lenses</td></tr><tr><td>repairing or replacing your glasses or contact lenses</td></tr><tr><td>travel for NHS treatment</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="101"><span class="badge log pass-bg mr-2">Pass</span>006- Verify the user benefits if they are over 60 years with council help.</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iAmOnTheHelpPayingNhsCostsPage()">
+                <span>Given I am on the help paying nhs costs page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iAmAPersonFrom(java.lang.String)">
+                <span>And I am a person from "Wales"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iAmYearsOldAndIEnterTheDayAsAndMonthAsAndYearAs(int,java.lang.String,java.lang.String,java.lang.String)">
+                <span>Given I am 62 years old and I enter the Day as "01" and Month as "01" and Year as "1959"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iDoLiveWithPartner()">
+                <span>And I do live with partner</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iDontClaimBenefits()">
+                <span>And I dont claim benefits</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iDontHaveInjuryServingArmedForces()">
+                <span>And I dont have injury serving armed forces</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iDoLiveInCareHome()">
+                <span>And I do live in care home</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iDoGetHelpFromCouncil()">
+                <span>And I do get help from council</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.clickOnNextButton()">
+                <span>When click on next button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iCanSeeTheNhsCostHelpResultPageTitleContains(java.lang.String)">
+                <span>Then I can see the nhs cost help result page title contains "Because you get help from your local council to pay for your care home"</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="116"><span class="badge log pass-bg mr-2">Pass</span>007- Verify the user benefits if they are over 60 years without council help.</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iAmOnTheHelpPayingNhsCostsPage()">
+                <span>Given I am on the help paying nhs costs page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iAmAPersonFrom(java.lang.String)">
+                <span>And I am a person from "Wales"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iAmYearsOldAndIEnterTheDayAsAndMonthAsAndYearAs(int,java.lang.String,java.lang.String,java.lang.String)">
+                <span>Given I am 62 years old and I enter the Day as "01" and Month as "01" and Year as "1959"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iDoLiveWithPartner()">
+                <span>And I do live with partner</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iDontClaimBenefits()">
+                <span>And I dont claim benefits</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iDontHaveInjuryServingArmedForces()">
+                <span>And I dont have injury serving armed forces</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iDoLiveInCareHome()">
+                <span>And I do live in care home</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iDoNotGetHelpFromCouncil()">
+                <span>And I do not get help from council</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iDoHaveSavingsOf£(int)">
+                <span>And I do have savings of £24000</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.clickOnNextButton()">
+                <span>When click on next button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinations.WalesNhsHelp_sd.iCanSeeTheNhsCostHelpResultPageTitleContains(java.lang.String)">
+                <span>Then I can see the nhs cost help result page title contains "You get help with health costs"</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+<div class="test-wrapper row view category-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">5</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>2</span>
+</span>
+<p class="name">@under19</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@under19</h4>
+<span status="pass" class='badge log pass-bg'>2 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>02:44:32 am</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>001- Verify the user benefits if they are under 19 years and full time education.</a>
+<div class="">
+<span class="badge badge-default">As a person from Wales.001- Verify the user benefits if they are under 19 years and full time education.</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>02:44:37 am</td>
+<td>
+<a href="#" class="linked" test-id='1' id='15'>002- Verify the user benefits if they are under 19 years and not in full time education.</a>
+<div class="">
+<span class="badge badge-default">As a person from Wales.002- Verify the user benefits if they are under 19 years and not in full time education.</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>2</span>
+</span>
+<p class="name">@over60</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@over60</h4>
+<span status="pass" class='badge log pass-bg'>2 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>02:45:05 am</td>
+<td>
+<a href="#" class="linked" test-id='1' id='101'>006- Verify the user benefits if they are over 60 years with council help.</a>
+<div class="">
+<span class="badge badge-default">As a person from Wales.006- Verify the user benefits if they are over 60 years with council help.</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>02:45:09 am</td>
+<td>
+<a href="#" class="linked" test-id='1' id='116'>007- Verify the user benefits if they are over 60 years without council help.</a>
+<div class="">
+<span class="badge badge-default">As a person from Wales.007- Verify the user benefits if they are over 60 years without council help.</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>2</span>
+</span>
+<p class="name">@age19-24</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@age19-24</h4>
+<span status="pass" class='badge log pass-bg'>2 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>02:44:45 am</td>
+<td>
+<a href="#" class="linked" test-id='1' id='33'>003- Verify the user benefits if they are from 19 to 24 years.</a>
+<div class="">
+<span class="badge badge-default">As a person from Wales.003- Verify the user benefits if they are from 19 to 24 years.</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>02:44:50 am</td>
+<td>
+<a href="#" class="linked" test-id='1' id='50'>004- Verify the user benefits if they are from 19 to 24 years and live with partner.</a>
+<div class="">
+<span class="badge badge-default">As a person from Wales.004- Verify the user benefits if they are from 19 to 24 years and live with partner.</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@age25-60</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@age25-60</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>02:45:00 am</td>
+<td>
+<a href="#" class="linked" test-id='1' id='84'>008- Verify the user benefits if they are 25 to 60 years and claim benefit or tax credit</a>
+<div class="">
+<span class="badge badge-default">As a person from Wales.008- Verify the user benefits if they are 25 to 60 years and claim benefit or tax credit</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>9</span>
+</span>
+<p class="name">@nhs</p>
+<p class="duration text-sm">9 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@nhs</h4>
+<span status="pass" class='badge log pass-bg'>9 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>02:44:32 am</td>
+<td>
+<a href="#" class="linked" test-id='1' id='1'>As a person from Wales</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>02:44:32 am</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>001- Verify the user benefits if they are under 19 years and full time education.</a>
+<div class="">
+<span class="badge badge-default">As a person from Wales.001- Verify the user benefits if they are under 19 years and full time education.</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>02:44:37 am</td>
+<td>
+<a href="#" class="linked" test-id='1' id='15'>002- Verify the user benefits if they are under 19 years and not in full time education.</a>
+<div class="">
+<span class="badge badge-default">As a person from Wales.002- Verify the user benefits if they are under 19 years and not in full time education.</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>02:44:45 am</td>
+<td>
+<a href="#" class="linked" test-id='1' id='33'>003- Verify the user benefits if they are from 19 to 24 years.</a>
+<div class="">
+<span class="badge badge-default">As a person from Wales.003- Verify the user benefits if they are from 19 to 24 years.</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>02:44:50 am</td>
+<td>
+<a href="#" class="linked" test-id='1' id='50'>004- Verify the user benefits if they are from 19 to 24 years and live with partner.</a>
+<div class="">
+<span class="badge badge-default">As a person from Wales.004- Verify the user benefits if they are from 19 to 24 years and live with partner.</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>02:44:55 am</td>
+<td>
+<a href="#" class="linked" test-id='1' id='67'>005- Verify the user benefits if they are 25 to 60 years.</a>
+<div class="">
+<span class="badge badge-default">As a person from Wales.005- Verify the user benefits if they are 25 to 60 years.</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>02:45:00 am</td>
+<td>
+<a href="#" class="linked" test-id='1' id='84'>008- Verify the user benefits if they are 25 to 60 years and claim benefit or tax credit</a>
+<div class="">
+<span class="badge badge-default">As a person from Wales.008- Verify the user benefits if they are 25 to 60 years and claim benefit or tax credit</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>02:45:05 am</td>
+<td>
+<a href="#" class="linked" test-id='1' id='101'>006- Verify the user benefits if they are over 60 years with council help.</a>
+<div class="">
+<span class="badge badge-default">As a person from Wales.006- Verify the user benefits if they are over 60 years with council help.</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>02:45:09 am</td>
+<td>
+<a href="#" class="linked" test-id='1' id='116'>007- Verify the user benefits if they are over 60 years without council help.</a>
+<div class="">
+<span class="badge badge-default">As a person from Wales.007- Verify the user benefits if they are over 60 years without council help.</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div>        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@14e9bb345ef7e2ed3a102f271d84e9f0267c88e7/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
+</html>
